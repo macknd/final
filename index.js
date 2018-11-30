@@ -1,0 +1,1 @@
+const footer= "<h3>About<h3><p>slfkgheoasdoige<p> ";
