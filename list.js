@@ -121,15 +121,36 @@ const socks=[
     }
 ]
 
-for(let i=0; i<3; i++){
-    const pic = socks[i].image;
-    const name = socks[i].name;
-    const price = socks[i].price;
-    let body = `<div class='col-12 col-md-4 sock-card' data-sock-index=${i}><img class="pics" src=${pic} alt=${name}><h5>${name}</h5><p>${price}</p></div>`;
-    $("#gallery").append(body);
+const getPage=(startIndex, endIndex)=>{
+    for(let i=startIndex; i<=endIndex; i++){
+        const pic = socks[i].image;
+        const name = socks[i].name;
+        const price = socks[i].price;
+        let body = `<div class='col-12 col-md-4 sock-card' data-sock-index=${i}><img class="pics" src=${pic} alt=${name}><h5>${name}</h5><p>${price}</p></div>`;
+        $("#plist").append(body);
+    }
 }
+
+$(document).ready(()=> {
+    getPage(0,8);
+    $("#first").click(()=>{
+        $("#plist").html("");
+        getPage(0,8);
+    })
+
+    $("#second").click(()=>{
+        $("#plist").html("");
+        getPage(9,17);
+    })
+
+    $("#third").click(()=>{
+        $("#plist").html("");
+        getPage(18,24);
+    })
+});
 
 $(document).on('click','.sock-card',(event)=>{
     let index = event.currentTarget.dataset.sockIndex;
     window.location=`http://localhost:8080/single.html?sockIndex=${index}`;
 })
+

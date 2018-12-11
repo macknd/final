@@ -121,13 +121,33 @@ const socks=[
     }
 ]
 
-for(let i=0; i<3; i++){
-    const pic = socks[i].image;
-    const name = socks[i].name;
-    const price = socks[i].price;
-    let body = `<div class='col-12 col-md-4 sock-card' data-sock-index=${i}><img class="pics" src=${pic} alt=${name}><h5>${name}</h5><p>${price}</p></div>`;
-    $("#gallery").append(body);
+const getPage=(startIndex, endIndex)=>{
+    for(let i=startIndex; i<=endIndex; i++){
+        const pic = socks[i].image;
+        const name = socks[i].name;
+        const price = socks[i].price;
+        let body = `<div class='col-12 col-md-4 sock-card' data-sock-index=${i}><img class="pics" src=${pic} alt=${name}><h5>${name}</h5><p>${price}</p></div>`;
+        $('#gallery').append(body);
+    }
 }
+
+const getSingle=(index)=>{
+    const pic = socks[index].image;
+    const name = socks[index].name;
+    const price = socks[index].price;
+    let body = `<div class='col-12 col-md-4'><img class="pics" src=${pic} alt=${name}></div><div class='col-12 col-md-8'><h5>${name}</h5><p>${price}</p><button class="btn btn-info">BUY NOW</button></div>`;
+    $('.single').append(body);
+}
+
+$(document).ready(()=>{
+    const pathname = window.location.href;
+    if(pathname.includes('sockIndex')){
+        let num = pathname.split("sockIndex=")[1];
+        getSingle(num);
+    }
+    getPage(0,2, "#gallery");
+
+});
 
 $(document).on('click','.sock-card',(event)=>{
     let index = event.currentTarget.dataset.sockIndex;
