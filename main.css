@@ -1,3 +1,99 @@
 .pics{
     height: 250px;
 }
+
+#logo{
+    height: 35px;
+}
+
+.tabs{
+    color: black;
+}
+
+#pic{
+    width: 320px;
+}
+
+.footer{
+    background-color: indianred;
+    padding-bottom: 15px;
+    border-top: 2px solid #5D7BBC;
+}
+
+#home{
+    margin-bottom: 0;
+}
+
+.navbar{
+    width: 100%;
+    border: 2px solid #5D7BBC;
+}
+
+#blist{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#plist{
+    text-align: center;
+}
+
+.btmtext{
+    padding-left: 10px;
+    padding-top: 15px;
+}
+
+#singletop{
+    margin-top: 10px;
+}
+
+#feat{
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+#featbox{
+    background-color: indianred;
+}
+
+#featpic{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#pic1{
+    width: 320px;
+    margin-left: 15px;
+}
+
+#products{
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#gallery{
+    text-align: center;
+}
+
+#top{
+    padding-top: 10px;
+}
+
+#ptag{
+    margin-bottom: 0px;
+}
+
+.singpic{
+    margin-left: 50px;
+}
+
+.single{
+    padding-top: 20px;
+    background-color: indianred;
+    padding-bottom: 20px;
+}
+
+.text{
+    padding-left: 25px;
+}

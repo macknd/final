@@ -135,7 +135,7 @@ const getSingle=(index)=>{
     const pic = socks[index].image;
     const name = socks[index].name;
     const price = socks[index].price;
-    let body = `<div class='col-12 col-md-4'><img class="pics" src=${pic} alt=${name}></div><div class='col-12 col-md-8'><h5>${name}</h5><p>${price}</p><button class="btn btn-info">BUY NOW</button></div>`;
+    let body = `<div class='col-12 col-md-4'><img class="pics singpic" src=${pic} alt=${name}></div><div class='col-12 col-md-8 text'><h5>${name}</h5><p>${price}</p><button class="btn btn-info">BUY NOW</button></div>`;
     $('.single').append(body);
 }
 
@@ -145,8 +145,7 @@ $(document).ready(()=>{
         let num = pathname.split("sockIndex=")[1];
         getSingle(num);
     }
-    getPage(0,2, "#gallery");
-
+    getPage(4,6, "#gallery");
 });
 
 $(document).on('click','.sock-card',(event)=>{
